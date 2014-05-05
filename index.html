@@ -40,84 +40,125 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Web前端模块化编程</h2>
-                    <h2>与</h2>
-                    <h2>开发体系</h2>
-                    <p>@Author Pakinguo</p>
+					<h3>Web前端模块化编程</h3>
+                    <h3>与</h3>
+                    <h3>开发体系</h3>
+                    <p><small>@Author Pakinguo</small></p>
+                    <p>
+                        <img src="img/qrcode.png"/>
+                    </p>
                     <br/>
-                    <br/>
-                    <p><a href="https://github.com/hakimel/reveal.js">PPT Powered by Reveal.js</a></p>
+                    <p><small><a href="https://github.com/hakimel/reveal.js">PPT&nbsp;&nbsp;Powered&nbsp;&nbsp;by&nbsp;&nbsp;Reveal.js</a></small></p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<h2>内容大纲</h2>
+                    <ul>
+                        <li>旧项目中积累的问题</li>
+                        <li>前端模块化的研究</li>
+                        <li>为开发提供的新架构</li>
+                        <li>设计与实践（进行中）</li>
+                    </ul>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
+				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2>旧项目中积累的问题</h2>
+						<ol>
+							<li class="fragment">资源文件引入</li>
+                            <li class="fragment">命名空间冲突</li>
+                            <li class="fragment">JS或HTML里写DOM模板?</li>
+							<li class="fragment">JS、CSS合并压缩</li>
+							<li class="fragment">说好的复用呢(ctrl+c & v)?</li>
+                            <li class="fragment">文件目录如何规范</li>
+						</ol>
 					</section>
 				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
+                <section data-transition="linear" data-background="#077" data-background-transition="slide">
+                    <section>
+                        <h2>前端模块化的研究</h2>
+                        <ul>
+                            <li>模块化的概念</li>
+                            <li>流行的框架</li>
+                            <li>模块化的意义</li>
+                            <li>SeaJS的浅析</li>
+                            <li>SeaJS的编译工具SPM与GruntJS</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>模块化的概念</h2>
+                        <p>模块化是一种处理复杂系统分解成为更好的可管理模块的方式，它可以把系统代码划分为一系列职责单一、高度解耦且可替换的模块，系统中某一部分的变化将如何影响其它部分就会变得显而易见，系统的可维护性更加简单易得。</p>
+                        <ul>
+                            <li><strong>解耦</strong></li>
+                            <li><strong>功能细化</strong></li>
+                            <li><strong>复用性强</strong></li>
+                            <li><strong>低维护成本</strong></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>流行的框架</h2>
+                        <ul>
+                            <li><a href="http://labjs.com/">LABJS</a></li>
+                            <li><a href="http://browserify.org/">Browserify</a></li>
+                            <li><a href="http://requirejs.org/">RequireJS</a></li>
+                            <li><a href="http://seajs.org/">SeaJS</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>模块化的意义</h2>
+                        <ol>
+                            <li>高度解耦，命名空间独立，方便协作开发</li>
+                            <li>文件即是模块，按需加载，以组合方式集成大功能</li>
+                            <li>通用组件多，不同页面复用性强</li>
+                            <li>可扩展性强，维护成本降低</li>
+                        </ol>
+                    </section>
+                </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+                <section>
+                    <section>
+                        <h2>SeaJS的浅析——开发5步骤</h2>
+                        <ul>
+                            <li>文件目录</li>
+                            <li>引入框架</li>
+                            <li>配置文件</li>
+                            <li>定义模块</li>
+                            <li>加载&使用模块</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>SeaJS的浅析之文件目录</h2>
+                    </section>
+                    <section>
+                        <h2>SeaJS的浅析之引入框架</h2>
+                    </section>
+                    <section>
+                        <h2>SeaJS的浅析之配置文件</h2>
+                    </section>
+                    <section>
+                        <h2>SeaJS的浅析之定义模块</h2>
+                    </section>
+                    <section>
+                        <h2>SeaJS的浅析之加载&使用模块</h2>
+                    </section>
+                </section>
 
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
+                <section>
+                    <section>
+                        <h2>SeaJS的编译工具</h2>
+                        <h2>SPM与GruntJS</h2>
+                    </section>
+                    <section>
+                        <h2>标准编译SPM</h2>
+
+                    </section>
+                    <section>
+                        <h2>功能齐全的GruntJS</h2>
+
+                    </section>
 				</section>
 
 				<section>
@@ -371,6 +412,7 @@ function linkify( selector ) {
 				progress: true,
 				history: true,
 				center: true,
+                slideNumber: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
@@ -394,3 +436,5 @@ function linkify( selector ) {
 
 	</body>
 </html>
+
+
