@@ -14,6 +14,8 @@
 
         debug: true,
 
-        map: []
+        map: [
+            ['modules', 'modules_dist']
+        ]
     });
 })()
