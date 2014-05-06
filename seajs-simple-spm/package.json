@@ -1,0 +1,15 @@
+{
+	"family": "spmdemo",
+	"name": "app",
+	"version": "1.0.0",
+	"spm": {
+		"base": "../",
+	
+        "alias": {
+            "jquery":   "lib/jquery.js",
+            "simple.js": "app/simple.js"
+        },
+		"debug": false,
+		"output": ["simple.js"]
+	}
+}

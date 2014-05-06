@@ -1,10 +1,10 @@
 (function(){
     seajs.config({
-        base: '../',
+        "base": "../../../",
 
-        alias: {
-            'jquery':   'lib/jquery.js',
-            'simple.js': 'app/simple.js'
+        "alias": {
+            "jquery":   "src/1.0.0/lib/jquery.js",
+            "simple.js": "src/1.0.0/app/simple.js"
         }
     });
 })()
