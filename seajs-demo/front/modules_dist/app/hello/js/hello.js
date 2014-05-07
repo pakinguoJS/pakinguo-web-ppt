@@ -1,1 +1,11 @@
-define("app/hello/js/hello",["/front/lib/jquery/2.0.3/jquery.js","components/alert/js/alert.js","components/alert/css/alert.css","jquery","components/alert/htpl/tpl.alert.js"],function(a){var b=a("/front/lib/jquery/2.0.3/jquery.js"),c=a("alert.js");b("#click").click(function(){c("Seajs modules!")})}),define("components/alert/htpl/tpl.alert",[],'<div id="alert-id-{id}" class="alert-wrap">    <div class="alert">        <div class="alert-top">{txt}</div>        <div data-id="alert-id-{id}" data-rel="alert-ok"  class="alert-foot">OK</div>    </div></div>'),define("components/alert/js/alert",["components/alert/css/alert.css","/front/lib/jquery/2.0.3/jquery.js","components/alert/htpl/tpl.alert"],function(a,b,c){function d(a){var b=f(g.replace(/\{id\}/g,h++).replace("{txt}",a));b.appendTo(f("body")).show(),b.find('[data-rel="alert-ok"]').click(e)}function e(){console.log(f(this).attr("data-id")),f("#"+f(this).attr("data-id")).fadeOut(function(){f(this).remove()})}a("components/alert/css/alert.css");var f=a("/front/lib/jquery/2.0.3/jquery.js"),g=a("components/alert/htpl/tpl.alert.js"),h=0;c.exports=d});
+/**
+ * @author
+ * @desc
+ */
+define("app/hello/js/hello", [ "/front/lib/jquery/2.0.3/jquery.js", "components/alert/js/alert.js", "components/alert/css/alert.css", "components/alert/htpl/tpl.alert.js" ], function(require, exports, module) {
+    var $ = require("/front/lib/jquery/2.0.3/jquery.js");
+    var Alert = require("alert.js");
+    $("#click").click(function() {
+        Alert("Seajs modules!");
+    });
+});
