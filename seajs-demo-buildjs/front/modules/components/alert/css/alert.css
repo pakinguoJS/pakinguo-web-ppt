@@ -1,0 +1,23 @@
+.alert-wrap{
+    position: absolute;
+    width: 99%;
+}
+.alert{
+    position: relative;
+    margin: 10% auto;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.alert-top{
+    padding: 30px 20px;
+    border-radius: 8px 8px 0 0;
+}
+.alert-foot{
+    border-top: 1px solid #ddd;
+    padding: 15px 20px;
+    color: #4d90fe;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
