@@ -53,12 +53,12 @@
                 </section>
 
                 <section>
-                    <h2>内容大纲</h2>
+                    <h1 style="font-size: 3em;">内容大纲</h1>
                     <ul>
                         <li>旧项目中积累的问题</li>
                         <li>前端模块化的研究</li>
                         <li>为开发提供的新架构</li>
-                        <li>设计与实践（进行中）</li>
+                        <li>设计与实践（进展中）</li>
                     </ul>
                 </section>
 
@@ -142,9 +142,9 @@
                     <section>
                         <h2>SeaJS浅析之引入框架</h2>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
-<script type="text/javascript" src="../lib/sea.js"></script>
+&lt;script type="text/javascript" src="../lib/sea.js"&gt;&lt;/script&gt;
 
-<script type="text/javascript" src="/front/lib/seajs/2.1.1/sea.js"></script>
+&lt;script type="text/javascript" src="/front/lib/seajs/2.1.1/sea.js"&gt;&lt;/script&gt;
                         </code></pre>
                     </section>
                     <section>
@@ -186,6 +186,17 @@
         map: []
     });
 })()
+                        </code></pre>
+                    </section>
+		    <section>
+                        <h2>SeaJS浅析之定义模块</h2>
+                        <p>simple.js</p>
+                        <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
+define define(factory)
+define 接受 factory 参数，factory 可以是一个函数，也可以是一个对象或字符串。
+
+define define(id?, deps?, factory)
+define 也可以接受两个以上参数。字符串 id 表示模块标识，数组 deps 是模块依赖。
                         </code></pre>
                     </section>
                     <section>
@@ -251,7 +262,7 @@ define(function(require, exports, module){
                     </section>
                     <section>
                         <h2>SeaJS浅析之加载&使用模块</h2>
-                        <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
+                        <pre><code data-trim  style="font-size: 18px; margin-top: 20px;" contenteditable="">
 // hello.js
 define(function(require, exports, module){
     var $ = require('jquery');
@@ -263,9 +274,9 @@ define(function(require, exports, module){
 });
 
 // hello.html
-<script type="text/javascript">
+&lt;script type="text/javascript"&gt;
     seajs.use('hello.js');
-</script>
+&lt;/script&gt;
                         </code></pre>
                     </section>
                     <section>
@@ -276,11 +287,11 @@ define(function(require, exports, module){
     &lt;head&gt;
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="../lib/sea.js"></script>
-        <script type="text/javascript" src="../app/simple.conf.js"></script>
-        <script type="text/javascript">
+        &lt;script type="text/javascript" src="../lib/sea.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="../app/simple.conf.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
             seajs.use('simple.js');
-        </script>
+        &lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
         <h1>SIMPLE DEMO</h1>
@@ -301,8 +312,14 @@ define(function(require, exports, module){
                         <h2>SeaJS的模块标识与依赖</h2>
                         <div style="text-align: left;font-size: 28px">
                             <p style="text-indent: 2em;"><strong>模块标识</strong>是一个字符串，用来标识模块。在require、require.async等加载函数中，第一个参数都是模块标识。</p>
+<<<<<<< HEAD
                             <ul style="margin-left: 2em;">
                                 <li>一个模块标识由斜线（/）分隔的多项组成。</li>
+=======
+                            <ul style="margin-left: 3em;">
+                                <li>一个模块标识由斜线（/）分隔的多项组成。</li>
+                                <li>每一项必须是小驼峰字符串、 . 或 .. 。</li>
+>>>>>>> d136996953980006d9fcd90a46e5c6ae9b1fd246
                                 <li>模块标识可以不包含文件后缀名，比如 .js。</li>
                                 <li>模块标识可以是<strong>相对</strong>或<strong>顶级</strong>标识。如果第一项是 . 或 ..，则该模块标识是相对标识。</li>
                                 <li>顶级标识根据模块系统的基础路径来解析。</li>
@@ -314,6 +331,7 @@ define(function(require, exports, module){
                     <section>
                         <h2>SeaJS的模块标识与依赖</h2>
                         <div style="text-align: left;font-size: 28px">
+<<<<<<< HEAD
                             <p><strong>模块依赖</strong>是一个数组，包含某个define的模块中需要引用的其他模块的列表。</p>
                             <p><strong>模块依赖</strong>确保在使用与执行某一模块前，把其需要引用的模块提前加载完毕。</p>
                             <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
@@ -339,6 +357,31 @@ define("app/hello/js/hello", [ "/front/lib/jquery/2.0.3/jquery.js", "components/
 });
                             </code></pre>
                         </div>
+=======
+                            <p><strong>模块依赖</strong>是一个数组，用来告知Seajs在执行加载或使用的模块时，保证引用到的模块优先被加载。</p>
+                            <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
+define(function(require, exports, module){
+    require('components/alert/css/alert.css');
+    var $ = require('jquery');
+    var tpl = require('components/alert/htpl/tpl.alert.js');
+    var id = 0;
+
+    ...
+})
+			    </code></pre>
+			    <p>以上定义的模块，'alert.css','jquery','tpl.alert.js'三个模块会在后面的代码执行前加载。</p>
+			    <p>看看进行transport后的依赖数组：</p>
+			    <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
+define("components/alert/js/alert", [ "components/alert/css/alert.css", "/front/lib/jquery/2.0.3/jquery.js", "components/alert/htpl/tpl.alert" ], function(require, exports, module) {
+    require("components/alert/css/alert.css");
+    var $ = require("/front/lib/jquery/2.0.3/jquery.js");
+    var tpl = require("components/alert/htpl/tpl.alert.js");
+    var id = 0;
+    ...
+});
+			    </code></pre>
+			</div>
+>>>>>>> d136996953980006d9fcd90a46e5c6ae9b1fd246
                     </section>
                     <section>
                         <h2>标准编译SPM</h2>
@@ -346,22 +389,142 @@ define("app/hello/js/hello", [ "/front/lib/jquery/2.0.3/jquery.js", "components/
                     </section>
                     <section>
                         <h2>功能齐全的GruntJS</h2>
+			<img src="img/gruntjs.jpg">
+			<p><a href="http://gruntjs.com/">Gruntjs.com</a></p>
+                    </section>
+		    <section>
+                        <h2>开启GruntJS的大门</h2>
+			<div style="text-align: left;font-size: 28px">
+			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+// *前提
+1、需要先安装NodeJS环境
+2、安装命令行接口
+npm install -g grunt-cli
 
+// 安装插件
+npm install grunt --save-dev
+npm install grunt-cmd-transport --save-dev
+npm install grunt-contrib-uglify --save-dev
+
+// 创建package
+方式一：npm init
+方式二：ctrl + c&v
+
+// 任务——Task Runner
+			    </code></pre>
+			</div>
+                    </section>
+		    <section>
+                        <h2>GruntJS之Transport</h2>
+			<div style="text-align: left;font-size: 28px">
+			    <p>Transport的功能是将未带模块标识和依赖的模块编译为具有详细的模块标识及依赖数组的模块，只针对CMD有作用</p>
+			    <p>GruntJS执行任务前需要创建Gruntfile.js文件，文件遵循以下的格式：</p>
+			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+module.exports = function(grunt) {
+    var root = 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo';   // self define
+
+    // 初始化配置
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        transport: {
+            proj: {
+                options: {
+                    idleading: '',
+                    debug: false,
+		    alias: {
+			"jquery": "/front/lib/jquery/2.0.3/jquery.js",
+			"hello": "app/hello/js/hello.js",
+			"alert": "components/alert/js/alert.js"
+		    },
+		    paths: [root + 'front/modules']
+		},
+                files: [{
+                    expand: true,
+                    cwd: root + 'front/modules',
+                    src: '**/*.js',
+                    dest: 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist'
+                }]
+            }
+        }
+
+    });
+
+    // 载入插件
+    grunt.loadNpmTasks('grunt-cmd-transport');
+
+    // 注册并执行任务
+    grunt.registerTask('default', ['transport']);
+};
+			    </code></pre>
+			</div>
+                    </section>
+		    <section>
+                        <h2>GruntJS之Uglify</h2>
+			<div style="text-align: left;font-size: 28px">
+			    <p>Uglify是对指定的模块进行压缩或合并。</p>
+			    <p>Uglify是在Transport之后执行，所以在注册任务时，需要把任务放在Transport之后：</p>
+			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+module.exports = function(grunt) {
+    var root = 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo';   // self define
+
+    // 初始化配置
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        transport: {
+            proj: {
+                options: {
+                    idleading: '',
+                    debug: false,
+		    alias: {
+			"jquery": "/front/lib/jquery/2.0.3/jquery.js",
+			"hello": "app/hello/js/hello.js",
+			"alert": "components/alert/js/alert.js"
+		    },
+		    paths: [root + 'front/modules']
+		},
+                files: [{
+                    expand: true,
+                    cwd: root + 'front/modules',
+                    src: '**/*.js',
+                    dest: 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist'
+                }]
+            }
+        },
+
+        uglify: {
+            // for ivy admin iteration 1
+            hello: {
+                files: {
+                    'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist/app/hello/js/hello.js' : [
+                    'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist/app/hello/js/hello.js',
+					'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist/components/alert/htpl/tpl.alert.js',
+					'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo/front/modules_dist/components/alert/js/alert.js'
+                    ]
+                }
+            }
+        }
+
+    });
+
+    // 载入插件
+    grunt.loadNpmTasks('grunt-cmd-transport');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    // 注册并执行任务
+    grunt.registerTask('default', ['transport', 'uglify']);
+};
+			    </code></pre>
+			</div>
                     </section>
                 </section>
 
-                <section data-state="customevent">
-                    <h2>Custom Events</h2>
-                    <p>
-                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-                    </p>
-                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-                </section>
-
+		<section>
+		    <h2>为开发提供新架构</h2>
+		</section>
+		
+		<section>
+		    <h2>设计与实践（进展中）</h2>
+		</section>
             </div>
 
         </div>
