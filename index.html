@@ -507,12 +507,50 @@ module.exports = function(grunt) {
                 <section>
                     <section>
                         <h2>设计与实践（进展中）</h2>
+                        <ul>
+                            <li class="fragment">开发规范：目录规范与命名规范</li>
+                            <li class="fragment">模块化：规范配置文件</li>
+                            <li class="fragment">编译工具：如何进行完整的流程</li>
+                            <li class="fragment">发布：待完成</li>
+                        </ul>
                     </section>
                     <section>
-                        <h2>标准的目录规范——灵活定制</h2>
-                        <img src="img/seajs-dir.jpg" style="vertical-align: top;">
+                        <h2>标准目录规范——灵活定制</h2>
+                        <img src="img/seajs-dir.jpg">
+                    </section>
+                    <section>
+                        <h2>标准配置文件——编译标记</h2>
+                        <img src="img/config.jpg">
+                    </section>
+                    <section>
+                        <h2>编译工具及流程</h2>
+                        <p>——从流程中开展插件的开发</p>
+                        <img src="img/flow.png">
+                    </section>
+                    <section>
+                        <h2>编译工具及流程</h2>
+                        <p>——目前完成的插件(基于Nodejs)</p>
+                        <img src="img/plugins.jpg">
+                        <pre><code data-trim  style="font-size: 18px; margin-top: 20px; line-height: 1em;" contenteditable="">
+buildjs         --执行脚本
+cmd-transport   --cmd transport
+cmd-uglify      --cmd uglify
+copy-dir        --复制指定的文件夹
+copy-views      --复制指定的view后缀的文件
+filter-config   --从配置文件过滤出transport需要的alias和uglify需要忽略的alias
+gruntjs         --Gruntjs插件
+htpl-to-cmd     --转换指定后缀的模板为cmd
+i18n            --国际化，以__("")方式
+include-tpl     --html模板中加载其他模块，以<!--@include="path"-->方式
+remove-dir      --删除指定的文件夹
+                        </code></pre>
                     </section>
                 </section>
+
+                <section>
+                        <h2>项目Github</h2>
+                        <a href=""></a>
+                    </section>
             </div>
 
         </div>
@@ -530,6 +568,7 @@ module.exports = function(grunt) {
                 history: true,
                 center: true,
                 slideNumber: true,
+                mouseWheel: true,
 
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
