@@ -34,6 +34,36 @@
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
+
+        <style>
+            .end{
+                position: relative;
+                margin: 0 auto !important;
+                width: 800px;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+            .end:after{
+                display: block;
+                content: ' ';
+                position: absolute;
+                top: -50px;
+                left: -100px;
+                width: 30px;
+                height: 200px;
+                z-index: 2;
+                background: rgba(255,255,255,.3);
+                -webkit-transform: rotate(45deg);
+                -webkit-animation-duration: 1.5s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-name: flash;
+            }
+            @-webkit-keyframes flash{
+                100% {
+                    left:1000px;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -42,19 +72,17 @@
 
             <div class="slides">
                 <section>
-                    <h3>Web前端模块化编程</h3>
-                    <h3>与</h3>
-                    <h3>开发体系</h3>
-                    <p><small>@Author Pakinguo</small></p>
+                    <h1 style="font-size: 2.4em;">Web前端模块化编程 &</h1>
+                    <h1 style="font-size: 2.4em;">开发体系</h1>
+                    <p><small>Author: Pakinguo</small></p>
                     <p>
                         <img src="img/qrcode.png"/>
                     </p>
-                    <p><small><a href="https://github.com/hakimel/reveal.js">PPT&nbsp;&nbsp;Powered&nbsp;&nbsp;by&nbsp;&nbsp;Reveal.js</a></small></p>
                 </section>
 
                 <section>
                     <h1 style="font-size: 3em;">内容大纲</h1>
-                    <ul>
+                    <ul style="line-height: 1.5em;">
                         <li>旧项目中积累的问题</li>
                         <li>前端模块化的研究</li>
                         <li>为开发提供的新架构</li>
@@ -64,8 +92,9 @@
 
                 <section>
                     <section>
-                        <h2>旧项目中积累的问题</h2>
-                        <ol>
+                        <h1 style="font-size: 2.75em;">旧项目中积累的问题</h1>
+                        <br>
+                        <ol style="line-height: 1.5em;">
                             <li class="fragment">资源文件引入</li>
                             <li class="fragment">命名空间冲突</li>
                             <li class="fragment">JS或HTML里写DOM模板?</li>
@@ -78,8 +107,9 @@
 
                 <section>
                     <section>
-                        <h2>前端模块化的研究</h2>
-                        <ul>
+                        <h1 style="font-size: 2.75em;">前端模块化的研究</h1>
+                        <br>
+                        <ul style="line-height: 1.5em;">
                             <li>模块化的概念</li>
                             <li>模块化的意义</li>
                             <li>流行的框架</li>
@@ -88,9 +118,9 @@
                         </ul>
                     </section>
                     <section>
-                        <h2>模块化的概念</h2>
-                        <p>模块化是一种处理复杂系统分解成为更好的可管理模块的方式，它可以把系统代码划分为一系列职责单一、高度解耦且可替换的模块，系统中某一部分的变化将如何影响其它部分就会变得显而易见，系统的可维护性更加简单易得。</p>
-                        <ul>
+                        <h1 style="font-size: 2.4em;">模块化的概念</h1>
+                        <p style="text-align: left; text-indent: 2em;">模块化是一种处理复杂系统分解成为更好的可管理模块的方式，它可以把系统代码划分为一系列职责单一、高度解耦且可替换的模块，系统中某一部分的变化将如何影响其它部分就会变得显而易见，系统的可维护性更加简单易得。</p>
+                        <ul style="line-height: 1.5em;">
                             <li><strong>解耦</strong></li>
                             <li><strong>功能细化</strong></li>
                             <li><strong>复用性强</strong></li>
@@ -98,17 +128,17 @@
                         </ul>
                     </section>
                     <section>
-                        <h2>模块化的意义</h2>
-                        <ol>
+                        <h1 style="font-size: 2.4em;">模块化的意义</h1>
+                        <ol style="line-height: 1.5em;">
                             <li>高度解耦，命名空间独立，方便协作开发</li>
-                            <li>文件即是模块，按需加载，以组合方式集成大功能</li>
+                            <li>文件即是模块，按需加载，以组合方式构成功能</li>
                             <li>通用组件多，不同页面复用性强</li>
                             <li>可扩展性强，维护成本降低</li>
                         </ol>
                     </section>
                     <section>
-                        <h2>流行的框架</h2>
-                        <ul>
+                        <h1 style="font-size: 2.4em;">流行的框架</h1>
+                        <ul style="line-height: 1.5em;">
                             <li><a href="http://labjs.com/">LABJS</a></li>
                             <li><a href="http://browserify.org/">Browserify</a></li>
                             <li><a href="http://requirejs.org/">RequireJS</a></li>
@@ -119,8 +149,9 @@
 
                 <section>
                     <section>
-                        <h2>SeaJS浅析——开发5步骤</h2>
-                        <ul>
+                        <h1 style="font-size: 2.75em;">SeaJS浅析——开发5步骤</h1>
+                        <br>
+                        <ul style="line-height: 1.5em;">
                             <li class="fragment">文件目录</li>
                             <li class="fragment">引入框架</li>
                             <li class="fragment">配置文件</li>
@@ -129,7 +160,7 @@
                         </ul>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之文件目录</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之文件目录</h1>
                         <div>
                             <label style="margin-right: 65px;margin-left: -35px">Simple Demo</label>
                             <label>Project Demo</label>
@@ -140,7 +171,7 @@
                         </div>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之引入框架</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之引入框架</h1>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 &lt;script type="text/javascript" src="../lib/sea.js"&gt;&lt;/script&gt;
 
@@ -148,7 +179,7 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之配置文件</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之配置文件</h1>
                         <p>Simple Demo</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 (function(){
@@ -164,7 +195,7 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之配置文件</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之配置文件</h1>
                         <p>Project Demo</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;" contenteditable="">
 (function(){
@@ -189,7 +220,7 @@
                         </code></pre>
                     </section>
 		    <section>
-                        <h2>SeaJS浅析之定义模块</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之定义模块</h1>
                         <p>simple.js</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define define(factory)
@@ -200,7 +231,7 @@ define 也可以接受两个以上参数。字符串 id 表示模块标识，数
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之定义模块</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之定义模块</h1>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define define(factory)
 define 接受 factory 参数，factory 可以是一个函数，也可以是一个对象或字符串。
@@ -210,7 +241,7 @@ define 也可以接受两个以上参数。字符串 id 表示模块标识，数
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之定义模块</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之定义模块</h1>
                         <p>simple.js</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define(function(require, exports, module){
@@ -222,7 +253,7 @@ define(function(require, exports, module){
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之定义模块</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之定义模块</h1>
                         <p>tpl.alert.js</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define('<div id="alert-id-{id}" class="alert-wrap">\
@@ -234,7 +265,7 @@ define('<div id="alert-id-{id}" class="alert-wrap">\
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之定义模块</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS浅析之定义模块</h1>
                         <p>alert.js</p>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define(function(require, exports, module){
@@ -261,7 +292,7 @@ define(function(require, exports, module){
                         </code></pre>
                     </section>
                     <section>
-                        <h2>SeaJS浅析之加载&使用模块</h2>
+                        <h1 style="font-size: 2.2em;">SeaJS浅析之加载&使用模块</h1>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;" contenteditable="">
 // hello.js
 define(function(require, exports, module){
@@ -280,7 +311,7 @@ define(function(require, exports, module){
                         </code></pre>
                     </section>
                     <section>
-                        <h2>Product</h2>
+                        <h1 style="font-size: 2.4em;">Product</h1>
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -305,11 +336,11 @@ define(function(require, exports, module){
 
                 <section>
                     <section>
-                        <h2>SeaJS的编译工具</h2>
-                        <h2>SPM与GruntJS</h2>
+                        <h1 style="font-size: 2.4em;">SeaJS的编译工具</h1>
+                        <h1 style="font-size: 2.4em;">SPM与GruntJS</h1>
                     </section>
                     <section>
-                        <h2>SeaJS的模块标识与依赖</h2>
+                        <h1 style="font-size: 2.2em;">SeaJS的模块标识与依赖</h1>
                         <div style="text-align: left;font-size: 28px">
                             <p style="text-indent: 2em;"><strong>模块标识</strong>是一个字符串，用来标识模块。在require、require.async等加载函数中，第一个参数都是模块标识。</p>
                             <ul style="margin-left: 3em;">
@@ -324,7 +355,7 @@ define(function(require, exports, module){
                         </div>
                     </section>
                     <section>
-                        <h2>SeaJS的模块标识与依赖</h2>
+                        <h1 style="font-size: 2.2em;">SeaJS的模块标识与依赖</h1>
                         <div style="text-align: left;font-size: 28px">
                             <p><strong>模块依赖</strong>是一个数组，用来告知Seajs在执行加载或使用的模块时，保证引用到的模块优先被加载。</p>
                             <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
@@ -336,33 +367,33 @@ define(function(require, exports, module){
 
     ...
 })
-			    </code></pre>
-			    <p>以上的模块，'alert.css','jquery','tpl.alert.js'三个模块会在后面的代码执行前加载。</p>
-			    <p>看看进行transport后的依赖数组：</p>
-			    <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
-define("components/alert/js/alert", [ "components/alert/css/alert.css", "/front/lib/jquery/2.0.3/jquery.js", "components/alert/htpl/tpl.alert" ], function(require, exports, module) {
-    require("components/alert/css/alert.css");
-    var $ = require("/front/lib/jquery/2.0.3/jquery.js");
-    var tpl = require("components/alert/htpl/tpl.alert.js");
-    var id = 0;
-    ...
-});
-			    </code></pre>
-			</div>
+                            </code></pre>
+                            <p>以上的模块，'alert.css','jquery','tpl.alert.js'三个模块会在后面的代码执行前加载。</p>
+                            <p>看看进行transport后的依赖数组：</p>
+                            <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
+            define("components/alert/js/alert", [ "components/alert/css/alert.css", "/front/lib/jquery/2.0.3/jquery.js", "components/alert/htpl/tpl.alert" ], function(require, exports, module) {
+                require("components/alert/css/alert.css");
+                var $ = require("/front/lib/jquery/2.0.3/jquery.js");
+                var tpl = require("components/alert/htpl/tpl.alert.js");
+                var id = 0;
+                ...
+            });
+                            </code></pre>
+                        </div>
                     </section>
                     <section>
-                        <h2>标准编译SPM</h2>
+                        <h1 style="font-size: 2.2em;">标准编译SPM</h1>
                         <img src="img/spm.jpg">
                     </section>
                     <section>
-                        <h2>功能齐全的GruntJS</h2>
-			<img src="img/gruntjs.jpg">
-			<p><a href="http://gruntjs.com/">Gruntjs.com</a></p>
+                        <h1 style="font-size: 2.2em;">功能强大的GruntJS</h1>
+                        <img src="img/gruntjs.jpg">
+                        <p><a href="http://gruntjs.com/">Gruntjs.com</a></p>
                     </section>
-		    <section>
-                        <h2>开启GruntJS的大门</h2>
-			<div style="text-align: left;font-size: 28px">
-			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+                    <section>
+                        <h1 style="font-size: 2.2em;">开启GruntJS的大门</h1>
+                        <div style="text-align: left;font-size: 28px">
+                            <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
 // *前提
 1、需要先安装NodeJS环境
 2、安装命令行接口
@@ -378,15 +409,15 @@ npm install grunt-contrib-uglify --save-dev
 方式二：ctrl + c&v
 
 // 任务——Task Runner
-			    </code></pre>
-			</div>
+                            </code></pre>
+                        </div>
                     </section>
-		    <section>
-                        <h2>GruntJS之Transport</h2>
-			<div style="text-align: left;font-size: 28px">
-			    <p>Transport的功能是将未带模块标识和依赖的模块编译为具有详细的模块标识及依赖数组的模块，只针对CMD有作用</p>
-			    <p>GruntJS执行任务前需要创建Gruntfile.js文件，文件遵循以下的格式：</p>
-			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+                    <section>
+                        <h1 style="font-size: 2.2em;">GruntJS之Transport</h1>
+                        <div style="text-align: left;font-size: 28px">
+                            <p>Transport的功能是将未带模块标识和依赖的模块编译为具有详细的模块标识及依赖数组的模块，只针对CMD有作用</p>
+                            <p>GruntJS执行任务前需要创建Gruntfile.js文件，文件遵循以下的格式：</p>
+                            <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
 module.exports = function(grunt) {
     var root = 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo';   // self define
 
@@ -422,15 +453,15 @@ module.exports = function(grunt) {
     // 注册并执行任务
     grunt.registerTask('default', ['transport']);
 };
-			    </code></pre>
-			</div>
+                        </code></pre>
+                    </div>
                     </section>
-		    <section>
-                        <h2>GruntJS之Uglify</h2>
-			<div style="text-align: left;font-size: 28px">
-			    <p>Uglify是对指定的模块进行压缩或合并。</p>
-			    <p>Uglify需要在进行Transport后的模块上运行，所以在注册任务时，需要把其放在Transport之后：</p>
-			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
+                    <section>
+                        <h1 style="font-size: 2.2em;">GruntJS之Uglify</h1>
+                        <div style="text-align: left;font-size: 28px">
+                            <p>Uglify是对指定的模块进行压缩或合并。</p>
+                            <p>Uglify需要在进行Transport后的模块上运行，所以在注册任务时，需要把其放在Transport之后：</p>
+                            <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
 module.exports = function(grunt) {
     var root = 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo';   // self define
 
@@ -480,16 +511,16 @@ module.exports = function(grunt) {
     // 注册并执行任务
     grunt.registerTask('default', ['transport', 'uglify']);
 };
-			    </code></pre>
-			</div>
+                            </code></pre>
+                        </div>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>为开发提供新架构</h2>
+                        <h1 style="font-size: 2.4em;">为开发提供新架构</h1>
                         <div>
-                            <p>模块化的思考</p>
+                            <h3 class="fragment">模块化的思考</h3>
                             <ul style="font-size: 28px;">
                                 <li class="fragment">这种模块化的开发方式还缺哪些便捷的功能？</li>
                                 <li class="fragment">模块化开发配合编译工具，有哪些地方不方面呢？</li>
@@ -499,15 +530,15 @@ module.exports = function(grunt) {
                         </div>
                     </section>
                     <section>
-                        <h2>开发体系结构关系图</h2>
+                        <h1 style="font-size: 2.2em;">开发体系结构关系图</h1>
                         <img src="img/struct.png"/>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>设计与实践（进展中）</h2>
-                        <ul>
+                        <h1 style="font-size: 2.4em;">设计与实践（进展中）</h1>
+                        <ul style="line-height: 1.5em;">
                             <li class="fragment">开发规范：目录规范与命名规范</li>
                             <li class="fragment">模块化：规范配置文件</li>
                             <li class="fragment">编译工具：如何进行完整的流程</li>
@@ -515,20 +546,20 @@ module.exports = function(grunt) {
                         </ul>
                     </section>
                     <section>
-                        <h2>标准目录规范——灵活定制</h2>
+                        <h1 style="font-size: 2.4em;">标准目录规范——灵活定制</h1>
                         <img src="img/seajs-dir.jpg">
                     </section>
                     <section>
-                        <h2>标准配置文件——编译标记</h2>
+                        <h1 style="font-size: 2.4em;">标准配置文件——编译标记</h1>
                         <img src="img/config.jpg">
                     </section>
                     <section>
-                        <h2>编译工具及流程</h2>
+                        <h1 style="font-size: 2.4em;">编译工具及流程</h1>
                         <p>——从流程中开展插件的开发</p>
                         <img src="img/flow.png">
                     </section>
                     <section>
-                        <h2>编译工具及流程</h2>
+                        <h1 style="font-size: 2.4em;">编译工具及流程</h1>
                         <p>——目前完成的插件(基于Nodejs)</p>
                         <img src="img/plugins.jpg">
                         <pre><code data-trim  style="font-size: 18px; margin-top: 20px; line-height: 1em;" contenteditable="">
@@ -548,9 +579,25 @@ remove-dir      --删除指定的文件夹
                 </section>
 
                 <section>
-                        <h2>项目Github</h2>
-                        <a href=""></a>
-                    </section>
+                    <h1>项目Github</h1>
+                    <div>
+                        <p><a href="https://github.com/pakinguoJS/pakinguo-web-ppt">pakinguo-web-ppt</a></p>
+                        <p><a href="#">https://github.com/pakinguoJS/pakinguo-web-ppt.git</a></p>
+                        <br>
+                        <h3>参考工具</h3>
+                        <p><a href="http://www.processon.com/">Process On 在线流程图编辑</a></p>
+                        <p><a href="https://github.com/hakimel/reveal.js">PPT&nbsp;&nbsp;Powered&nbsp;&nbsp;by&nbsp;&nbsp;Reveal.js</a></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Thank you!</h1>
+                    <br>
+                    <div style="font-size: 1.25em" class="end">
+                        <p>「只要你努力只要你坚持，你就可以」</p>
+                    </div>
+
+                </section>
             </div>
 
         </div>
