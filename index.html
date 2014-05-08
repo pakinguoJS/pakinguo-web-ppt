@@ -312,14 +312,9 @@ define(function(require, exports, module){
                         <h2>SeaJS的模块标识与依赖</h2>
                         <div style="text-align: left;font-size: 28px">
                             <p style="text-indent: 2em;"><strong>模块标识</strong>是一个字符串，用来标识模块。在require、require.async等加载函数中，第一个参数都是模块标识。</p>
-<<<<<<< HEAD
-                            <ul style="margin-left: 2em;">
-                                <li>一个模块标识由斜线（/）分隔的多项组成。</li>
-=======
                             <ul style="margin-left: 3em;">
                                 <li>一个模块标识由斜线（/）分隔的多项组成。</li>
                                 <li>每一项必须是小驼峰字符串、 . 或 .. 。</li>
->>>>>>> d136996953980006d9fcd90a46e5c6ae9b1fd246
                                 <li>模块标识可以不包含文件后缀名，比如 .js。</li>
                                 <li>模块标识可以是<strong>相对</strong>或<strong>顶级</strong>标识。如果第一项是 . 或 ..，则该模块标识是相对标识。</li>
                                 <li>顶级标识根据模块系统的基础路径来解析。</li>
@@ -331,33 +326,6 @@ define(function(require, exports, module){
                     <section>
                         <h2>SeaJS的模块标识与依赖</h2>
                         <div style="text-align: left;font-size: 28px">
-<<<<<<< HEAD
-                            <p><strong>模块依赖</strong>是一个数组，包含某个define的模块中需要引用的其他模块的列表。</p>
-                            <p><strong>模块依赖</strong>确保在使用与执行某一模块前，把其需要引用的模块提前加载完毕。</p>
-                            <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
-// 开发版的hello.js
-define(function(require, exports, module){
-    var $ = require('jquery');
-    var Alert = require('alert.js');
-
-    $('#click').click(function(){
-        Alert('Seajs modules!');
-    })
-});
-                            </code></pre>
-                            <p>以上代码，在执行绑定click的代码前，会先加载好"jquery"和"alert.js"模块</p>
-                            <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
-// transport之后的hello.js
-define("app/hello/js/hello", [ "/front/lib/jquery/2.0.3/jquery.js", "components/alert/js/alert.js", "components/alert/css/alert.css", "components/alert/htpl/tpl.alert.js" ], function(require, exports, module) {
-    var $ = require("/front/lib/jquery/2.0.3/jquery.js");
-    var Alert = require("alert.js");
-    $("#click").click(function() {
-        Alert("Seajs modules!");
-    });
-});
-                            </code></pre>
-                        </div>
-=======
                             <p><strong>模块依赖</strong>是一个数组，用来告知Seajs在执行加载或使用的模块时，保证引用到的模块优先被加载。</p>
                             <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define(function(require, exports, module){
@@ -369,7 +337,7 @@ define(function(require, exports, module){
     ...
 })
 			    </code></pre>
-			    <p>以上定义的模块，'alert.css','jquery','tpl.alert.js'三个模块会在后面的代码执行前加载。</p>
+			    <p>以上的模块，'alert.css','jquery','tpl.alert.js'三个模块会在后面的代码执行前加载。</p>
 			    <p>看看进行transport后的依赖数组：</p>
 			    <pre><code data-trim  style="font-size: 18px; margin-top: 20px;">
 define("components/alert/js/alert", [ "components/alert/css/alert.css", "/front/lib/jquery/2.0.3/jquery.js", "components/alert/htpl/tpl.alert" ], function(require, exports, module) {
@@ -381,7 +349,6 @@ define("components/alert/js/alert", [ "components/alert/css/alert.css", "/front/
 });
 			    </code></pre>
 			</div>
->>>>>>> d136996953980006d9fcd90a46e5c6ae9b1fd246
                     </section>
                     <section>
                         <h2>标准编译SPM</h2>
@@ -462,7 +429,7 @@ module.exports = function(grunt) {
                         <h2>GruntJS之Uglify</h2>
 			<div style="text-align: left;font-size: 28px">
 			    <p>Uglify是对指定的模块进行压缩或合并。</p>
-			    <p>Uglify是在Transport之后执行，所以在注册任务时，需要把任务放在Transport之后：</p>
+			    <p>Uglify需要在进行Transport后的模块上运行，所以在注册任务时，需要把其放在Transport之后：</p>
 			    <pre><code data-trim  style="font-size: 20px; margin-top: 20px; line-height: 1em;">
 module.exports = function(grunt) {
     var root = 'E:/wamp_x64/www/0P_github/pakinguo-web-ppt/seajs-demo';   // self define
@@ -521,7 +488,7 @@ module.exports = function(grunt) {
 		<section>
 		    <h2>为开发提供新架构</h2>
 		</section>
-		
+
 		<section>
 		    <h2>设计与实践（进展中）</h2>
 		</section>
