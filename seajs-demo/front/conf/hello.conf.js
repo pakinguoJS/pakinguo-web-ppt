@@ -15,7 +15,7 @@
         debug: true,
 
         map: [
-            ['modules', 'modules_dist']
+//            ['modules', 'modules_dist']
         ]
     });
 })()
